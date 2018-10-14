@@ -1,0 +1,17 @@
+[Script Info]
+Title: <untitled>
+Original Script: <unknown>
+ScriptType: v4.00
+
+[V4 Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, TertiaryColour, BackColour, Bold, Italic, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, AlphaLevel, Encoding
+Style: Default,Tahoma,24,16777215,16777215,16777215,12632256,-1,0,1,1,1,6,30,30,415,0,0
+
+[Events]
+Format: Marked, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: Marked=0,0:00:01.00,0:00:02.00,Default,NTP,0000,0000,0000,!Effect,Subtitle
+Dialogue: Marked=0,0:00:03.00,0:00:03.50,Default,NTP,0000,0000,0000,!Effect,- Subtitle
+Dialogue: Marked=0,0:01:05.00,0:01:05.25,Default,NTP,0000,0000,0000,!Effect,[Sound effect] Subtitle
+Dialogue: Marked=0,1:30:00.00,1:35:00.00,Default,NTP,0000,0000,0000,!Effect,<format>Subtitle</format>
+Dialogue: Marked=0,2:00:00.00,2:11:11.00,Default,NTP,0000,0000,0000,!Effect,Multi line\NSubtitle
+Dialogue: Marked=0,2:20:00.00,3:00:00.00,Default,NTP,0000,0000,0000,!Effect,Subtitle
