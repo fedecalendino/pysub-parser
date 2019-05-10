@@ -1,9 +1,8 @@
 ## pysub-parser
 
+[![Version](https://img.shields.io/github/release/federicocalendino/pysub-parser.svg)](https://pypi.org/project/pysub-parser)
 [![Build Status](https://travis-ci.com/federicocalendino/pysub-parser.svg?branch=master)](https://travis-ci.com/federicocalendino/pysub-parser)
-[![codecov](https://codecov.io/gh/federicocalendino/pysub-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/federicocalendino/pysub-parser)
-[![PEP8](https://img.shields.io/badge/code%20style-pep8-orange.svg)](https://www.python.org/dev/peps/pep-0008/)
-[![license: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/federicocalendino/pysub-parser/blob/master/LICENSE)
+[![CodeCoverage](https://codecov.io/gh/federicocalendino/pysub-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/federicocalendino/pysub-parser)
 
 
 Utility to extract the contents of a subtitle file.
