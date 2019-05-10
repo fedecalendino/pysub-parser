@@ -9,7 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
   name='pysub-parser',
-  version='1.0',
+  version='1.0.1',
   url='https://github.com/federicocalendino/pysub-parser',
   license='MIT',
 

@@ -1,0 +1,18 @@
+# Disable sudo to speed up the build
+sudo: false
+
+language: python
+python: 3.6
+
+# Install the codecov pip dependency
+install:
+  - pip install -r requirements.txt
+  - pip install codecov
+
+# Run the unit test
+script:
+  - coverage run test.py
+
+# Push the results back to codecov
+after_success:
+  - codecov
