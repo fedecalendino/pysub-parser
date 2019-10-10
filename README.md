@@ -2,6 +2,7 @@
 
 [![Version](https://img.shields.io/github/release/federicocalendino/pysub-parser.svg)](https://pypi.org/project/pysub-parser)
 [![Build Status](https://travis-ci.com/federicocalendino/pysub-parser.svg?branch=master)](https://travis-ci.com/federicocalendino/pysub-parser)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=federicocalendino_pysub-parser&metric=alert_status)](https://sonarcloud.io/dashboard?id=federicocalendino_pysub-parser)
 [![CodeCoverage](https://codecov.io/gh/federicocalendino/pysub-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/federicocalendino/pysub-parser)
 
 
