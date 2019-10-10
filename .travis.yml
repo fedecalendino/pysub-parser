@@ -9,9 +9,16 @@ install:
   - pip install -r requirements.txt
   - pip install codecov
 
+addons:
+  sonarcloud:
+    organization: "federicocalendino"
+    token:
+      secure: "dfd9d3355518ddadfdb0503eaf1abc5b2cb8625e" # encrypted value of your token
+
 # Run the unit test
 script:
   - coverage run test.py
+  - sonar-scanner
 
 # Push the results back to codecov
 after_success:
