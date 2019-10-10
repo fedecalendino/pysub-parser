@@ -13,7 +13,7 @@ addons:
   sonarcloud:
     organization: "federicocalendino"
     token:
-      secure: "dfd9d3355518ddadfdb0503eaf1abc5b2cb8625e" # encrypted value of your token
+      secure: "dfd9d3355518ddadfdb0503eaf1abc5b2cb8625e"
 
 # Run the unit test
 script:
