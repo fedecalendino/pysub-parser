@@ -29,7 +29,7 @@ The method parse requires the following parameters:
   * `fps`: framerate (only used by `sub` files), `23.976` by default.
 
 ```python
-from parser import parse
+from pysubparser import parse
 
 subtitles = parse('./files/space-jam.srt')
 
@@ -69,7 +69,7 @@ this will lower case it and remove anything that isn't letters or numbers.
 * `to_lowercase`: if `False`, the string wont be transformed to lowercase.
 * `to_ascii`: if `True`, every character will be transformed to their closest ascii representation.
 * `remove_brackes`: if `True`,  everything inside `[brackets]` will be removed.
-* `remove_format`: if `True`,  every formatting tag `<i>abc</i>` will be removed.
+* `remove_formatting`: if `True`,  every formatting tag `<i>abc</i>` will be removed.
 
 ```python
 from parser import parse
