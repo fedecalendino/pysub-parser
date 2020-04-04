@@ -72,7 +72,7 @@ this will lower case it and remove anything that isn't letters or numbers.
 * `remove_formatting`: if `True`,  every formatting tag `<i>abc</i>` will be removed.
 
 ```python
-from parser import parse
+from pysubparser import parse
 
 subtitles = parse('./files/space-jam.srt')
 
