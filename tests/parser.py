@@ -29,7 +29,6 @@ class ParserTester(TestCase):
 
         self.assertTrue(str(index) in str(sub))
         self.assertTrue(text in str(sub))
-        self.assertTrue(str(duration) in str(sub))
 
     @ddt.data('ass', 'ssa', 'srt', 'sub', 'txt')
     def test_valid_subtitles(self, subtitle_type):

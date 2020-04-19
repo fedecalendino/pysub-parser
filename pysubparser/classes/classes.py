@@ -5,6 +5,8 @@ from pysubparser.util import time_to_millis
 
 
 class Subtitle:
+    __SLOTS__ = ["index", "start", "end", "text", "lines"]
+
     def __init__(
             self,
             index: int,

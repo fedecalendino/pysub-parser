@@ -15,7 +15,7 @@ def int_to_time(value: int, fps: float) -> time:
         ms = (s - int(s)) * 1000000
 
         return time(hour=int(h), minute=int(m), second=int(s), microsecond=int(ms))
-    except:
+    except ValueError:
         raise InvalidTimestampError(value, '{int}', 'sub')
 
 

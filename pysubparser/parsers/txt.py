@@ -19,7 +19,7 @@ def parse_timestamps(line: str) -> Tuple[time, time]:
         end = datetime.strptime(end + '0', TIMESTAMP_FORMAT).time()
 
         return start, end
-    except:
+    except ValueError:
         raise InvalidTimestampError(line, TIMESTAMP_FORMAT, 'txt')
 
 

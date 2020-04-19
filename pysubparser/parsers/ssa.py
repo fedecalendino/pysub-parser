@@ -13,7 +13,7 @@ TIMESTAMP_FORMAT = '%H:%M:%S.%f'
 def parse_timestamps(timestamp: str) -> time:
     try:
         return datetime.strptime(timestamp + '0', TIMESTAMP_FORMAT).time()
-    except:
+    except ValueError:
         raise InvalidTimestampError(
             timestamp=timestamp,
             expected_format=TIMESTAMP_FORMAT,
