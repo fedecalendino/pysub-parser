@@ -2,7 +2,7 @@ from datetime import time
 from typing import Iterator
 from itertools import count
 
-from pysubparser.classes.classes import Subtitle
+from pysubparser.classes.subtitle import Subtitle
 from pysubparser.classes.exceptions import InvalidTimestampError
 
 
