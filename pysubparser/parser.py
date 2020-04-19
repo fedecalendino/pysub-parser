@@ -1,10 +1,5 @@
 from pysubparser.classes.exceptions import InvalidSubtitleTypeError
-
-from pysubparser.parsers import srt
-from pysubparser.parsers import ssa
-from pysubparser.parsers import sub
-from pysubparser.parsers import txt
-
+from pysubparser.parsers import srt, ssa, sub, txt
 
 PARSERS = {
     "ass": ssa.parse,

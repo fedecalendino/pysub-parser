@@ -1,4 +1,5 @@
 from typing import Iterator, List
+
 from pysubparser.classes.subtitle import Subtitle
 
 

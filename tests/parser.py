@@ -2,10 +2,8 @@ from unittest import TestCase
 
 import ddt
 
+from pysubparser.classes.exceptions import InvalidSubtitleTypeError, InvalidTimestampError
 from pysubparser.parser import parse
-from pysubparser.classes.exceptions import InvalidSubtitleTypeError
-from pysubparser.classes.exceptions import InvalidTimestampError
-
 
 PATH = "./tests/files/{test_type}/test.{subtitle_type}"
 

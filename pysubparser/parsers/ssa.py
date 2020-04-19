@@ -1,11 +1,9 @@
-from datetime import datetime
-from datetime import time
-from typing import Iterator
+from datetime import datetime, time
 from itertools import count
+from typing import Iterator
 
-from pysubparser.classes.subtitle import Subtitle
 from pysubparser.classes.exceptions import InvalidTimestampError
-
+from pysubparser.classes.subtitle import Subtitle
 
 TIMESTAMP_FORMAT = '%H:%M:%S.%f'
 

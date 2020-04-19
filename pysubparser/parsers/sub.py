@@ -1,9 +1,9 @@
 from datetime import time
-from typing import Iterator
 from itertools import count
+from typing import Iterator
 
-from pysubparser.classes.subtitle import Subtitle
 from pysubparser.classes.exceptions import InvalidTimestampError
+from pysubparser.classes.subtitle import Subtitle
 
 
 def int_to_time(value: int, fps: float) -> time:
