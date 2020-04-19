@@ -1,5 +1,5 @@
 import re
-from typing import Iterator, List
+from typing import Iterable, Iterator
 
 from pysubparser.classes.subtitle import Subtitle
 
@@ -7,7 +7,7 @@ FORMAT_OPEN_CLEANER = re.compile(r'<[^[]*>', re.UNICODE)
 FORMAT_CLOSE_CLEANER = re.compile(r'</[^[]*>', re.UNICODE)
 
 
-def clean(subtitles: List[Subtitle]) -> Iterator[Subtitle]:
+def clean(subtitles: Iterable[Subtitle]) -> Iterator[Subtitle]:
     for subtitle in subtitles:
         text = subtitle.text
         text = FORMAT_CLOSE_CLEANER.sub('', text)

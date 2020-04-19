@@ -76,3 +76,20 @@ class CleanersTester(TestCase):
 
         clean_subtitles = brackets.clean(self.subtitles)
         self._assert_subtitles(clean_subtitles, expected)
+
+    def test_cleaner_combinations(self):
+        expected = [
+            "subtitle",
+            "- subtitle",
+            "subtitle",
+            "subtitle",
+            "multi line subtitle",
+            "subtitle",
+        ]
+
+        clean_subtitles = brackets.clean(
+            formatting.clean(
+                lower_case.clean(self.subtitles)
+            )
+        )
+        self._assert_subtitles(clean_subtitles, expected)
