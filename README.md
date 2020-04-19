@@ -29,26 +29,20 @@ The method parse requires the following parameters:
   * `fps`: framerate (only used by `sub` files), `23.976` by default.
 
 ```python
-from pysubparser import parsers
+from pysubparser import parser
 
-subtitles = parsers.parse('./files/space-jam.srt')
+subtitles = parser.parse('./files/space-jam.srt')
 
 for subtitle in subtitles:
     print(subtitle)
 ```
 
 Output:
-```
+```text
 0 > [BALL BOUNCING]
 1 > Michael?
 2 > What are you doing out here, son? It's after midnight.
 3 > MICHAEL: Couldn't sleep, Pops.
-4 > Well, neither can we, with all that noise you're making.
-5 > Come on, let's go inside.
-6 > Just one more shot?
-7 > [CHUCKLES]
-8 > All right. Just one.
-9 > Yeah.
 ```
 
 ___
@@ -70,7 +64,7 @@ for subtitle in subtitles:
 ```
 
 Output:
-```
+```text
 00:00:36.328000 > 00:00:38.329000
 [BALL BOUNCING]
 
@@ -82,22 +76,37 @@ What are you doing out here, son? It's after midnight.
 
 00:01:11.572000 > 00:01:13.072000
 MICHAEL: Couldn't sleep, Pops.
-
-00:01:13.240000 > 00:01:16.200000
-Well, neither can we, with all that noise you're making.
-
-00:01:16.368000 > 00:01:17.577000
-Come on, let's go inside.
-
-00:01:18.203000 > 00:01:20.163000
-Just one more shot?
-
-00:01:20.330000 > 00:01:21.789000
-[CHUCKLES]
-
-00:01:21.957000 > 00:01:24.167000
-All right. Just one.
-
-00:01:24.334000 > 00:01:25.835000
-Yeah.
 ```
+
+### Cleaners
+
+Currently, 4 cleaners are provided:
+
+* `ascii` will translate every unicode character to its ascii equivalent.
+* `brackets` will remove anything between them (e.g., `[BALL BOUNCING]`)
+* `formatting` will remove formatting keys like `<i>` and `</i>`.
+* `lower_case` will lower case all text. 
+
+```python
+from pysubparser.cleaners import ascii, brackets, formatting, lower_case
+
+subtitles = brackets.clean(
+    lower_case.clean(
+        subtitles
+    )
+)
+
+for subtitle in subtitles:
+    print(subtitle)
+```
+
+```text
+0 > 
+1 > michael?
+2 > what are you doing out here, son? it's after midnight.
+3 > michael: couldn't sleep, pops.
+```
+
+### Writers
+
+Given any list of `Subtitle` and a path it will output those subtitles in a `srt` format.
