@@ -1,11 +1,12 @@
 from datetime import time
+from typing import Iterator
 from itertools import count
 
 from pysubparser.classes.classes import Subtitle
 from pysubparser.classes.exceptions import InvalidTimestampError
 
 
-def int_to_time(value, fps):
+def int_to_time(value: int, fps: float) -> time:
     try:
         value = int(value) / float(fps)
 
@@ -18,19 +19,24 @@ def int_to_time(value, fps):
         raise InvalidTimestampError(value, '{int}', 'sub')
 
 
-def parse(path, encoding='utf-8', **kwargs):
+def parse(
+        path: str,
+        encoding: str = "utf-8",
+        **kwargs
+) -> Iterator[Subtitle]:
     fps = kwargs.get('fps', 23.976)
 
     index = count(0)
+
     with open(path, encoding=encoding) as file:
 
         for line in file:
             line = line.rstrip()
 
             start, end = line.replace('{', '').split('}')[:2]
-            text = [t.split('}')[-1] for t in line.split('|')]
+            lines = [t.split('}')[-1] for t in line.split('|')]
 
             start = int_to_time(start, fps)
             end = int_to_time(end, fps)
 
-            yield Subtitle(next(index), start, end, text)
+            yield Subtitle(next(index), start, end, lines)

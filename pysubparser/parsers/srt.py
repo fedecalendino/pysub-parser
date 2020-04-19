@@ -1,4 +1,6 @@
 from datetime import datetime
+from datetime import time
+from typing import Iterator, Tuple
 from itertools import count
 
 from pysubparser.classes.classes import Subtitle
@@ -7,8 +9,10 @@ from pysubparser.classes.exceptions import InvalidTimestampError
 TIMESTAMP_SEPARATOR = ' --> '
 TIMESTAMP_FORMAT = '%H:%M:%S,%f'
 
+NAME = 'str'
 
-def parse_timestamps(line):
+
+def parse_timestamps(line: str) -> Tuple[time, time]:
     try:
         start, end = line.split(TIMESTAMP_SEPARATOR)
 
@@ -20,7 +24,11 @@ def parse_timestamps(line):
         raise InvalidTimestampError(line, TIMESTAMP_FORMAT, 'srt')
 
 
-def parse(path, encoding='utf-8', **kwargs):
+def parse(
+        path: str,
+        encoding: str = "utf-8",
+        **_
+) -> Iterator[Subtitle]:
     index = count(0)
 
     with open(path, encoding=encoding) as file:
@@ -36,7 +44,7 @@ def parse(path, encoding='utf-8', **kwargs):
                     subtitle = Subtitle(next(index), start, end)
             else:
                 if line:
-                    subtitle.add_text_line(line)
+                    subtitle.add_line(line)
                 else:
                     yield subtitle
                     subtitle = None
