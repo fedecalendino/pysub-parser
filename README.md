@@ -29,9 +29,9 @@ The method parse requires the following parameters:
   * `fps`: framerate (only used by `sub` files), `23.976` by default.
 
 ```python
-from pysubparser import parse
+from pysubparser import parsers
 
-subtitles = parse('./files/space-jam.srt')
+subtitles = parsers.parse('./files/space-jam.srt')
 
 for subtitle in subtitles:
     print(subtitle)

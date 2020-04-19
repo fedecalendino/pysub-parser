@@ -9,10 +9,14 @@ FORMAT_CLOSE_CLEANER = re.compile(r'</[^[]*>', re.UNICODE)
 
 def clean(subtitles: Iterable[Subtitle]) -> Iterator[Subtitle]:
     for subtitle in subtitles:
-        text = subtitle.text
-        text = FORMAT_CLOSE_CLEANER.sub('', text)
-        text = FORMAT_OPEN_CLEANER.sub('', text)
+        subtitle.lines = list(map(
+            lambda line: FORMAT_CLOSE_CLEANER.sub('', line).strip(),
+            subtitle.lines
+        ))
 
-        subtitle.text = text.strip()
+        subtitle.lines = list(map(
+            lambda line: FORMAT_OPEN_CLEANER.sub('', line).strip(),
+            subtitle.lines
+        ))
 
         yield subtitle

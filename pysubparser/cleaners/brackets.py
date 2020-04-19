@@ -8,8 +8,9 @@ BRACKETS_CLEANER = re.compile(r'\[[^[]*\]', re.UNICODE)
 
 def clean(subtitles: Iterable[Subtitle]) -> Iterator[Subtitle]:
     for subtitle in subtitles:
-        text = BRACKETS_CLEANER.sub('', subtitle.text)
-
-        subtitle.text = text.strip()
+        subtitle.lines = list(map(
+            lambda line: BRACKETS_CLEANER.sub('', line).strip(),
+            subtitle.lines
+        ))
 
         yield subtitle

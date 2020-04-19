@@ -8,8 +8,6 @@ from pysubparser.classes.subtitle import Subtitle
 TIMESTAMP_SEPARATOR = ' --> '
 TIMESTAMP_FORMAT = '%H:%M:%S,%f'
 
-NAME = 'str'
-
 
 def parse_timestamps(line: str) -> Tuple[time, time]:
     try:
