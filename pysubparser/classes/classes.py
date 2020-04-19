@@ -27,5 +27,5 @@ class Subtitle:
         self.text = ' '.join(self.lines)
 
     def __repr__(self):
-        return f"{self.index} > {self.text} ({self.duration} ms.)"
+        return f"{self.index} > {self.text}"
 

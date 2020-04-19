@@ -10,8 +10,8 @@ Utility to extract the contents of a subtitle file.
 
 Supported types:
 
-* `ssa`: [SubStation Alpha](https://en.wikipedia.org/wiki/SubStation_Alpha)
 * `ass`: [Advanced SubStation Alpha](https://en.wikipedia.org/wiki/SubStation_Alpha#Advanced_SubStation_Alpha)
+* `ssa`: [SubStation Alpha](https://en.wikipedia.org/wiki/SubStation_Alpha)
 * `srt`: [SubRip](https://en.wikipedia.org/wiki/SubRip)
 * `sub`: [MicroDVD](https://en.wikipedia.org/wiki/MicroDVD)
 * `txt`: [Sub Viewer](https://en.wikipedia.org/wiki/SubViewer)
@@ -34,19 +34,21 @@ from pysubparser import parse
 subtitles = parse('./files/space-jam.srt')
 
 for subtitle in subtitles:
-    print(f'{subtitle.index} > {subtitle.text}')
+    print(subtitle)
 ```
 
 Output:
 ```
-1 > [BALL BOUNCING]
-2 > Michael?
-3 > What are you doing out here, son? It's after midnight.
-4 > MICHAEL: Couldn't sleep, Pops.
-5 > Well, neither can we, with all that noise you're making.
-6 > Come on, let's go inside.
-7 > Just one more shot?
-
+0 > [BALL BOUNCING]
+1 > Michael?
+2 > What are you doing out here, son? It's after midnight.
+3 > MICHAEL: Couldn't sleep, Pops.
+4 > Well, neither can we, with all that noise you're making.
+5 > Come on, let's go inside.
+6 > Just one more shot?
+7 > [CHUCKLES]
+8 > All right. Just one.
+9 > Yeah.
 ```
 
 ___
@@ -59,3 +61,43 @@ Each line of a dialogue is represented with a `Subtitle` object with the followi
 * `start`: timestamp of the start of the dialog.
 * `end`: timestamp of the end of the dialog.
 * `text`: dialog contents.
+
+```python
+for subtitle in subtitles:
+    print(f'{subtitle.start} > {subtitle.end}')
+    print(subtitle.text)
+    print()
+```
+
+Output:
+```
+00:00:36.328000 > 00:00:38.329000
+[BALL BOUNCING]
+
+00:01:03.814000 > 00:01:05.189000
+Michael?
+
+00:01:08.402000 > 00:01:11.404000
+What are you doing out here, son? It's after midnight.
+
+00:01:11.572000 > 00:01:13.072000
+MICHAEL: Couldn't sleep, Pops.
+
+00:01:13.240000 > 00:01:16.200000
+Well, neither can we, with all that noise you're making.
+
+00:01:16.368000 > 00:01:17.577000
+Come on, let's go inside.
+
+00:01:18.203000 > 00:01:20.163000
+Just one more shot?
+
+00:01:20.330000 > 00:01:21.789000
+[CHUCKLES]
+
+00:01:21.957000 > 00:01:24.167000
+All right. Just one.
+
+00:01:24.334000 > 00:01:25.835000
+Yeah.
+```
