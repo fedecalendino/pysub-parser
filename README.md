@@ -1,9 +1,9 @@
 ## pysub-parser
 
-[![Version](https://img.shields.io/github/release/federicocalendino/pysub-parser.svg)](https://pypi.org/project/pysub-parser)
-[![Build Status](https://travis-ci.com/federicocalendino/pysub-parser.svg?branch=master)](https://travis-ci.com/federicocalendino/pysub-parser)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=federicocalendino_pysub-parser&metric=alert_status)](https://sonarcloud.io/dashboard?id=federicocalendino_pysub-parser)
-[![CodeCoverage](https://codecov.io/gh/federicocalendino/pysub-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/federicocalendino/pysub-parser)
+[![Version](https://img.shields.io/pypi/v/pysub-parser?logo=pypi)](https://pypi.org/project/pysub-parser)
+[![Build Status](https://img.shields.io/travis/federicocalendino/pysub-parser/master?logo=travis)](https://travis-ci.com/federicocalendino/pysub-parser)
+[![Quality Gate Status](https://img.shields.io/sonar/alert_status/federicocalendino_pysub-parser?logo=sonarcloud&server=https://sonarcloud.io)](https://sonarcloud.io/dashboard?id=federicocalendino_pysub-parser)
+[![CodeCoverage](https://img.shields.io/codecov/c/gh/federicocalendino/pysub-parser?logo=codecov)](https://codecov.io/gh/federicocalendino/pysub-parser)
 
 
 Utility to extract the contents of a subtitle file.

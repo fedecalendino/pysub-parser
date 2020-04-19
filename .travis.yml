@@ -1,25 +1,42 @@
-# Disable sudo to speed up the build
-sudo: false
-
+os: linux
+dist: xenial
 language: python
-python: 3.6
 
-# Install the codecov pip dependency
-install:
-  - pip install -r requirements.txt
-  - pip install codecov
+python: 3.8
 
 addons:
   sonarcloud:
     organization: "federicocalendino"
-    token:
-      secure: "dfd9d3355518ddadfdb0503eaf1abc5b2cb8625e"
+
+# Install the codecov pip dependency
+install:
+  - pip install -r requirements.txt
+  - pip install -r requirements-test.txt
 
 # Run the unit test
 script:
   - coverage run test.py
+  - coverage xml
   - sonar-scanner
 
 # Push the results back to codecov
 after_success:
   - codecov
+  - bash <(curl -s https://codecov.io/bash)
+
+jobs:
+  fast_finish: true
+  include:
+    - python: 3.6
+    - python: 3.7
+    - python: 3.8
+    - stage: deploy
+      python: 3.8
+      if: tag IS present
+      deploy:
+        provider: pypi
+        user: "__token__"
+        # password: see secret PYPI_PASSWORD variable
+        distributions: sdist bdist_wheel
+        on:
+          tags: true
