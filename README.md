@@ -11,7 +11,7 @@ Utility to extract the contents of a subtitle file.
 Supported types:
 
 * `ssa`: [SubStation Alpha](https://en.wikipedia.org/wiki/SubStation_Alpha)
-  * `ass`: [Advanced SubStation Alpha](https://en.wikipedia.org/wiki/SubStation_Alpha#Advanced_SubStation_Alpha)
+* `ass`: [Advanced SubStation Alpha](https://en.wikipedia.org/wiki/SubStation_Alpha#Advanced_SubStation_Alpha)
 * `srt`: [SubRip](https://en.wikipedia.org/wiki/SubRip)
 * `sub`: [MicroDVD](https://en.wikipedia.org/wiki/MicroDVD)
 * `txt`: [Sub Viewer](https://en.wikipedia.org/wiki/SubViewer)
@@ -34,7 +34,7 @@ from pysubparser import parse
 subtitles = parse('./files/space-jam.srt')
 
 for subtitle in subtitles:
-    print('{} > {}'.format(subtitle.index, subtitle.text))
+    print(f'{subtitle.index} > {subtitle.text}')
 ```
 
 Output:
@@ -59,36 +59,3 @@ Each line of a dialogue is represented with a `Subtitle` object with the followi
 * `start`: timestamp of the start of the dialog.
 * `end`: timestamp of the end of the dialog.
 * `text`: dialog contents.
-
-**text clean up**:
-
-The class `Subtitle` provides a method `clean_up` to normalize its text, 
-this will lower case it and remove anything that isn't letters or numbers.
-
-
-* `to_lowercase`: if `False`, the string wont be transformed to lowercase.
-* `to_ascii`: if `True`, every character will be transformed to their closest ascii representation.
-* `remove_brackes`: if `True`,  everything inside `[brackets]` will be removed.
-* `remove_formatting`: if `True`,  every formatting tag `<i>abc</i>` will be removed.
-
-```python
-from pysubparser import parse
-
-subtitles = parse('./files/space-jam.srt')
-
-for subtitle in subtitles:
-    print('{} > {}'.format(subtitle.index, subtitle.clean_up(to_ascii=True, remove_brackets=True)))
-```
-
-Output:
-```
-1 > 
-2 > michael
-3 > what are you doing out here son its after midnight
-4 > michael couldnt sleep pops
-5 > well neither can we with all that noise youre making
-6 > come on lets go inside
-7 > just one more shot
-
-```
-
