@@ -15,7 +15,7 @@ install:
 
 # Run the unit test
 script:
-  - coverage run --source genius -m unittest discover
+  - coverage run --source pysubparser -m unittest discover
   - coverage xml
   - sonar-scanner
 
