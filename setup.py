@@ -9,7 +9,7 @@ with open(path.join(this_directory, "README.md"), encoding="utf-8") as f:
 
 setup(
     name="pysub-parser",
-    version="1.2",
+    version="1.3",
     url="https://github.com/federicocalendino/pysub-parser",
     license="MIT",
     description="Utility to extract the contents of a subtitle file",
@@ -17,7 +17,13 @@ setup(
     long_description_content_type="text/markdown",
     author="Federico Calendino",
     author_email="federicocalendino@gmail.com",
-    packages=["pysubparser", "pysubparser.classes", "pysubparser.parsers"],
+    packages=[
+        "pysubparser", 
+        "pysubparser.classes", 
+        "pysubparser.cleaners",
+        "pysubparser.parsers",
+        "pysubparser.writers",
+    ],
     install_requires=["unidecode"],
     test_requires=["coverage", "parameterized"],
     keywords=["subtitle", "subtitles", "parser", "srt", "sub", "ssa", "txt"],
