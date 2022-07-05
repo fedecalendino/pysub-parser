@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "pysub-parser"
+version = "1.5.0"
+description = "Utility to extract the contents of a subtitle file"
+authors = ["Fede Calendino <fede@calendino.com>"]
+license = "MIT License"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+unidecode = "^1.3.4"
+
+[tool.poetry.dev-dependencies]
+coverage = "^6.4.1"
+ddt = "^1.5.0"
+black = "^22.6.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

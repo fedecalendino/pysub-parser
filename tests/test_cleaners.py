@@ -5,7 +5,6 @@ from pysubparser.parser import parse
 
 
 class CleanersTester(TestCase):
-
     def setUp(self) -> None:
         self.subtitles = parse("./tests/files/valid/cleaners.srt")
 
@@ -76,4 +75,3 @@ class CleanersTester(TestCase):
 
         clean_subtitles = brackets.clean(self.subtitles)
         self._assert_subtitles(clean_subtitles, expected)
-

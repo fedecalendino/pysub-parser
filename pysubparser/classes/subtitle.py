@@ -8,11 +8,11 @@ class Subtitle:
     __SLOTS__ = ["index", "start", "end", "text", "lines"]
 
     def __init__(
-            self,
-            index: int,
-            start: time = None,
-            end: time = None,
-            lines: List[str] = None
+        self,
+        index: int,
+        start: time = None,
+        end: time = None,
+        lines: List[str] = None,
     ):
         self.index: int = index
         self.start: time = start
@@ -21,7 +21,7 @@ class Subtitle:
 
     @property
     def text(self) -> str:
-        return ' '.join(self.lines)
+        return " ".join(self.lines)
 
     @property
     def duration(self) -> int:
@@ -32,4 +32,3 @@ class Subtitle:
 
     def __repr__(self):
         return f"{self.index} > {self.text}"
-

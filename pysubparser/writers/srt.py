@@ -2,11 +2,11 @@ from typing import Iterable
 
 from pysubparser.classes.subtitle import Subtitle
 
-TIMESTAMP_FORMAT = '%H:%M:%S,%f'
+TIMESTAMP_FORMAT = "%H:%M:%S,%f"
 
 
 def write(subtitles: Iterable[Subtitle], path: str):
-    with open(path, 'w+', encoding='utf-8') as file:
+    with open(path, "w+", encoding="utf-8") as file:
         for subtitle in subtitles:
             timestamp = "{start} --> {end}".format(
                 start=subtitle.start.strftime(TIMESTAMP_FORMAT)[:-3],

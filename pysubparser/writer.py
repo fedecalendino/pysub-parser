@@ -9,13 +9,9 @@ WRITERS = {
 }
 
 
-def write(
-        subtitles: Iterable[Subtitle],
-        path: str,
-        subtitle_type: str = None,
-):
+def write(subtitles: Iterable[Subtitle], path: str, subtitle_type: str = None):
     if not subtitle_type:
-        subtitle_type = path[path.rfind(".") + 1:]
+        subtitle_type = path[path.rfind(".") + 1 :]
 
     writer = WRITERS.get(subtitle_type.lower())
 
