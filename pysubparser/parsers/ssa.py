@@ -40,4 +40,5 @@ def parse(path: str, encoding: str = "utf-8", **_) -> Iterator[Subtitle]:
                 .replace("\\N", "\\n")
                 .split("\\n")
             )
+
             yield Subtitle(next(index), start, end, lines)

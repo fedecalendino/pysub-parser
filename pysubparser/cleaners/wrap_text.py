@@ -1,5 +1,6 @@
-from typing import Iterable, Iterator
 import textwrap
+from typing import Iterable, Iterator
+
 from pysubparser.classes.subtitle import Subtitle
 
 
