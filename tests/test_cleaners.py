@@ -31,7 +31,7 @@ class CleanersTester(TestCase):
             ["[Sound effect] Subtitle"],
             ["<format>Subtitle</format>"],
             ["Multi line", "Subtitle"],
-            ["subtitle"],
+            ["Subtitle"],
         ]
 
         clean_subtitles = ascii.clean(self.subtitles)
