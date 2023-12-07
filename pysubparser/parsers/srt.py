@@ -41,3 +41,6 @@ def parse(path: str, encoding: str = "utf-8", **_) -> Iterator[Subtitle]:
                 else:
                     yield subtitle
                     subtitle = None
+
+        if subtitle:
+            yield subtitle
